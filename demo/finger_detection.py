@@ -1,10 +1,11 @@
+# python3 finger_detections 0
+
 from skimage.morphology import reconstruction
 from skimage.morphology import opening
 
 import numpy as np
-import math
 import cv2
-
+import sys
 
 def handDescomposition(mask):
 
@@ -99,6 +100,13 @@ def initSystem(src):
 	
 
 def main():
+
+	try:
+		src = int(sys.argv[1])
+	except:
+		print('Default camera source')
+		src = 0
+
 	video = initSystem(0)
 
 	#Skin Characterization

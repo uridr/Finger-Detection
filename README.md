@@ -11,9 +11,9 @@ The software used for building the finger detection system is organized as follo
   - `skin_color_histogram.ipynb` : *Color spaces analysis* 
   - `skin_color_characterization.ipynb` : *Skin detection* 
 - `models`
-  - `components.ipynb` : *Finger detection using morphological operators*
+  - `components.ipynb` : *Finger classification using morphological operators*
   - `data_augmentation.ipynb` : *Image augmentation*
-  - `cnn.ipynb` : *Finger detection using Convolutional NN*
+  - `cnn.ipynb` : *Finger classification using Convolutional NN*
 - `demo`
   - `finger_detection.py` : *Real Time System*
 
@@ -26,9 +26,10 @@ To allow third parties to reproduce the results, execute all the script in the f
 1. `skin_color_histogram.ipynb`
 2. `skin_color_characterization.ipynb`
 3. `components.ipynb`
-4. `data_augmentation.ipynb`
 
-Alternatively, one can execute the `finger_detection.py` system and the system will pop-up in your laptop:
+
+
+Alternatively, one can execute the `finger_detection.py` script and the detection & clasification system will pop-up in your laptop:
 
 **pyhton3** finger_detection.py [CAMERA SOURCE]
 

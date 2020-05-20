@@ -33,7 +33,7 @@ Alternatively, one can execute the `finger_detection.py` script and the detectio
 
 **pyhton3** finger_detection.py [CAMERA SOURCE]
 
-The CAMERA SOURCE is 0 for laptop-cam or the corresponding port for a web-cam, default 1.
+The CAMERA SOURCE is 0 for laptop-cam or the corresponding port for a web-cam, default 1. The default configuration of the system perform at its best if hand are shown at a distance of $0.4-0.6$ meters. w.r.t the camera.
 
 
 

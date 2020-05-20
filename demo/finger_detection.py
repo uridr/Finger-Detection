@@ -17,7 +17,7 @@ def handDescomposition(mask):
 	#top-hat
 	fingers = mask-hand
 	kernel  = np.ones((3,3), np.uint8) 
-	fingers_enh = cv2.erode(fingers, kernel, iterations=6)
+	fingers_enh = cv2.erode(fingers, kernel, iterations=5)
 		
 	#fingers-components above given area-threashold            
 	components = cv2.connectedComponentsWithStats(np.uint8(fingers_enh), connectivity=4)
@@ -114,7 +114,7 @@ def main():
 		ret, frame = video.read()
 		frame=cv2.flip(frame, 1)
 
-		text_skin = 'Put Hand in the box for Skin Characterization and press: t'		
+		text_skin = 'Put ONLY HAND SKIN in the box for skin characterization and press: t'		
 		cv2.putText(frame,text_skin,(100,70), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,255,0), 2, cv2.LINE_AA)
 		cv2.rectangle(frame,(100,100),(300,300),(0,255,0),0)
 
@@ -128,7 +128,9 @@ def main():
 	#Finger Detection
 	while True:
 		ret, frame = video.read()
-		frame=cv2.flip(frame, 1)
+		
+		frame = cv2.GaussianBlur(frame, (5,5), 0)
+		frame = cv2.flip(frame, 1)
 
 		text_skin = 'Put Hand in the box for Finger Detection.'		
 		cv2.putText(frame,text_skin,(100,70), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,255,0), 2, cv2.LINE_AA)
